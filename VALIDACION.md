@@ -32,3 +32,7 @@ Las primeras comprobaciones detectaron un aviso de indentación de Lint y límit
 ## Pendientes de continuidad
 
 El informe `docs/CONTINUIDAD_VISUAL.md` enumera las 24 uniones. Permanecen saltos de materiales, marcos, sombras y curvas de senderos; la puerta de la entrada exterior está pintada cerrada y no coincide exactamente con el umbral interior. No se han retocado los recursos aprobados. Los sprites tienen transparencia real, aunque el proceso de separación original puede dejar halos y variación de volumen. Las pruebas nativas no sustituyen una revisión en dispositivo físico de rutas largas, bordes, fuentes grandes y TalkBack.
+
+## Primera ejecución de GitHub Actions
+
+La ejecución inicial del commit de integración se detuvo antes de Gradle porque `android-actions/setup-android@v3` intentaba instalar el paquete retirado `tools`. Se fija el runner a Ubuntu 24.04 y se solicita explícitamente `platform-tools`. La compilación local del APK y las 41 pruebas no dependen de ese fallo de preparación remota.
