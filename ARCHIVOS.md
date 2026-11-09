@@ -1,6 +1,6 @@
-# Archivos · CrimeGrid 0.4.0
+# Archivos · CrimeGrid 0.5
 
-Inventario del proyecto existente y de la integración gráfica. Se excluyen builds, cachés, configuración local del SDK y claves.
+Inventario del proyecto existente, sin builds, cachés, configuración local ni claves.
 
 - `.github/workflows/android.yml`
 - `.gitignore`
@@ -11,6 +11,7 @@ Inventario del proyecto existente y de la integración gráfica. Se excluyen bui
 - `VALIDACION.md`
 - `app/build.gradle.kts`
 - `app/src/main/AndroidManifest.xml`
+- `app/src/main/assets/licenses/PixelifySans-OFL.txt`
 - `app/src/main/assets/pixelart/characters/alma_walk_48x64.png`
 - `app/src/main/assets/pixelart/characters/dario_walk_48x64.png`
 - `app/src/main/assets/pixelart/characters/irene_walk_48x64.png`
@@ -32,20 +33,34 @@ Inventario del proyecto existente y de la integración gráfica. Se excluyen bui
 - `app/src/main/assets/pixelart/mansion/D3_Sala_de_musica.png`
 - `app/src/main/assets/pixelart/mansion/D4_Cabana.png`
 - `app/src/main/assets/pixelart/mansion/manifest.json`
+- `app/src/main/assets/pixelart/mansion/patches/A2-A3.png`
+- `app/src/main/assets/pixelart/mansion/patches/A2-B2.png`
+- `app/src/main/assets/pixelart/mansion/patches/B1-B2.png`
+- `app/src/main/assets/pixelart/mansion/patches/C1-C2.png`
+- `app/src/main/assets/pixelart/mansion/patches/C2-C3.png`
+- `app/src/main/assets/pixelart/mansion/patches/D1-D2.png`
+- `app/src/main/assets/pixelart/mansion/patches/manifest.json`
 - `app/src/main/kotlin/com/crimegrid/MainActivity.kt`
 - `app/src/main/kotlin/com/crimegrid/data/InvestigationStore.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/CrimeGridApp.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/DetectiveScreens.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/DetectiveTheme.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/DragController.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/InvestigationViewModel.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/MansionMap.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/Notebook.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/PixelArt.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/PixelAssets.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/RoomBoard.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/WalkingLayer.kt`
 - `app/src/main/res/drawable/ic_crimegrid.xml`
+- `app/src/main/res/font/pixelify_sans.ttf`
 - `app/src/main/res/values/styles.xml`
 - `app/src/main/res/xml/data_extraction_rules.xml`
 - `app/src/test/kotlin/com/crimegrid/ui/ApprovedAssetsTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/ApprovedMapUiTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/CrimeGridUiTest.kt`
+- `app/src/test/kotlin/com/crimegrid/ui/Detective05UiTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/DragControllerTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/InvestigationViewModelTest.kt`
 - `build.gradle.kts`
@@ -54,6 +69,7 @@ Inventario del proyecto existente y de la integración gráfica. Se excluyen bui
 - `core/src/main/kotlin/com/crimegrid/data/Models.kt`
 - `core/src/main/kotlin/com/crimegrid/domain/Engine.kt`
 - `core/src/main/kotlin/com/crimegrid/domain/Navigation.kt`
+- `core/src/main/kotlin/com/crimegrid/domain/Resolution.kt`
 - `core/src/main/resources/cases/case001.json`
 - `core/src/main/resources/cases/case002.json`
 - `core/src/main/resources/cases/case003.json`
@@ -62,6 +78,16 @@ Inventario del proyecto existente y de la integración gráfica. Se excluyen bui
 - `core/src/test/kotlin/com/crimegrid/domain/CampaignTest.kt`
 - `core/src/test/kotlin/com/crimegrid/domain/EngineTest.kt`
 - `core/src/test/kotlin/com/crimegrid/domain/NavigationTest.kt`
+- `core/src/test/kotlin/com/crimegrid/domain/ResolutionTest.kt`
+- `docs/0.4/README.md`
+- `docs/0.4/VALIDACION.md`
+- `docs/0.5/CONTINUIDAD.md`
+- `docs/0.5/CUADERNO.png`
+- `docs/0.5/REPARACIONES.json`
+- `docs/0.5/RESOLUCION.png`
+- `docs/0.5/TABLERO.png`
+- `docs/0.5/VALIDACION.md`
+- `docs/0.5/ZOOM.png`
 - `docs/CONTINUIDAD_VISUAL.md`
 - `docs/art/CASO004.png`
 - `docs/art/COSTURAS.csv`
@@ -69,10 +95,13 @@ Inventario del proyecto existente y de la integración gráfica. Se excluyen bui
 - `docs/art/ORIGEN_SPRITES.md`
 - `docs/art/SHA256_ORIGINALES.json`
 - `docs/art/SPRITES_AUDITORIA.json`
+- `docs/licenses/PixelifySans-OFL.txt`
 - `gradle.properties`
 - `gradle/wrapper/gradle-wrapper.jar`
 - `gradle/wrapper/gradle-wrapper.properties`
 - `gradlew`
 - `gradlew.bat`
 - `scripts/audit_art.py`
+- `scripts/audit_continuity_05.py`
+- `scripts/repair_seams_05.py`
 - `settings.gradle.kts`

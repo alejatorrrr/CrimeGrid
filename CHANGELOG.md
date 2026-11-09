@@ -1,5 +1,18 @@
 # Cambios
 
+## 0.5
+
+- Presentación nueva y aislada del caso 004; los demás casos conservan su investigación.
+- Atlas continuo a ancho completo, sin coordenadas, nombres ni separaciones visuales.
+- Zoom por toque sin selección y vuelta animada a vista general.
+- Arrastre, cancelación, restricciones y sprites originales preservados; caminar recortado al viewport ampliado.
+- Interfaz victoriana pixel art con tipografía local OFL, marcos de bronce e iconos de expediente.
+- Cuaderno desplazable con tres marcas manuales persistentes y contador.
+- Resolución con datos originales y deducciones calculadas por las reglas existentes.
+- Caché de PNG y anclajes; sin bibliotecas de ejecución nuevas.
+- Seis correcciones cromáticas no destructivas y revisión documentada de las 24 uniones; arquitectura y jardines no reparables con seguridad se conservan.
+- 53 pruebas y capturas nativas de tablero, zoom, cuaderno y resolución.
+
 ## 0.4.0
 
 - Integra sin retoques los 16 fondos y cuatro spritesheets aprobados en el caso 004.

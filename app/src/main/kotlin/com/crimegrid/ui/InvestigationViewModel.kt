@@ -27,6 +27,7 @@ class InvestigationViewModel(context: Context, private val savedState: SavedStat
             Engine.valid(case, it.positions) && it.screen in setOf("menu", "investigation", "result") &&
                 (it.screen != "result" || Engine.complete(case, it.positions)) &&
                 it.hintsRevealed in 0..case.hints.size && it.reviewedClues.all { index -> index in case.clues.indices } &&
+                it.markedClues.all { index -> index in case.clues.indices } &&
                 (it.selectedSuspect == null || case.suspects.any { suspect -> suspect.id == it.selectedSuspect })
         } ?: InvestigationState(caseId = case.id)
     }
@@ -87,12 +88,23 @@ class InvestigationViewModel(context: Context, private val savedState: SavedStat
         mutableFeedback.value = null
         mutableWalk.value = null
         val current = state.value
-        update(Engine.reset(current).copy(screen = "investigation", solved = current.solved || Engine.complete(case, current.positions)))
+        update(Engine.reset(current).copy(screen = "investigation", markedClues = emptySet(), solved = current.solved || Engine.complete(case, current.positions)))
     }
     fun toggleClue(index: Int) {
         if (index !in case.clues.indices) return
         val read = state.value.reviewedClues
         update(state.value.copy(reviewedClues = if (index in read) read - index else read + index))
+    }
+    /** Selection can be cleared explicitly so taps inspect rooms rather than move a suspect. */
+    fun clearSelection() = update(state.value.copy(selectedSuspect = null, message = ""))
+    fun cycleNotebookClue(index: Int) {
+        if (index !in case.clues.indices) return
+        val current = state.value
+        update(when {
+            index in current.markedClues -> current.copy(reviewedClues = current.reviewedClues - index, markedClues = current.markedClues - index)
+            index in current.reviewedClues -> current.copy(markedClues = current.markedClues + index)
+            else -> current.copy(reviewedClues = current.reviewedClues + index)
+        })
     }
     fun requestHint() {
         if (state.value.hintsRevealed < case.hints.size)

@@ -59,4 +59,11 @@ class ApprovedAssetsTest {
         assertNotNull(game.feedback.value)
         for (case in game.cases) assertTrue(com.crimegrid.domain.Engine.complete(case,case.solution.positions))
     }
+
+    @Test fun decodedPngsAndSpriteAnchorsAreReused(){
+        val a=PixelAssets.bitmap(context.assets,"pixelart/characters/alma_walk_48x64.png")!!
+        val b=PixelAssets.bitmap(context.assets,"pixelart/characters/alma_walk_48x64.png")!!
+        assertSame(a,b)
+        assertSame(PixelAssets.spriteFeet("alma",a),PixelAssets.spriteFeet("alma",b))
+    }
 }

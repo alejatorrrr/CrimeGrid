@@ -25,7 +25,8 @@ import kotlinx.serialization.Serializable
     val positions: Map<String, Position> = emptyMap(),
     val selectedSuspect: String? = null, val screen: String = "menu", val message: String = "",
     val caseId: String = "001", val hintsRevealed: Int = 0,
-    val reviewedClues: Set<Int> = emptySet(), val solved: Boolean = false
+    val reviewedClues: Set<Int> = emptySet(), val solved: Boolean = false,
+    val markedClues: Set<Int> = emptySet()
 )
 
 /** Visual locations remain separate from logical coordinates and do not alter clues. */

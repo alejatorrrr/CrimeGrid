@@ -94,4 +94,36 @@ class InvestigationViewModelTest {
         game.openCase("002"); game.openCase("001")
         assertEquals(Position(0, 1), game.state.value.positions["bruno"])
     }
+
+    @Test fun notebookCyclesThreeStatesAndPersistsIndependently(){
+        val game=model();game.openCase("004")
+        game.cycleNotebookClue(0)
+        assertEquals(setOf(0),game.state.value.reviewedClues)
+        assertTrue(game.state.value.markedClues.isEmpty())
+        game.cycleNotebookClue(0)
+        assertEquals(setOf(0),game.state.value.markedClues)
+        assertEquals(setOf(0),model().state.value.markedClues)
+        game.openCase("002")
+        assertTrue(game.state.value.markedClues.isEmpty())
+        game.openCase("004")
+        assertEquals(setOf(0),game.state.value.markedClues)
+        game.cycleNotebookClue(0)
+        assertTrue(game.state.value.reviewedClues.isEmpty())
+        assertTrue(game.state.value.markedClues.isEmpty())
+    }
+    @Test fun notebookAnnotationsNeverChangeBoardOrVictoryAndResetClearsThem(){
+        val game=model();game.openCase("004")
+        for((id,pos) in game.case.solution.positions)game.drop(id,pos)
+        val positions=game.state.value.positions
+        repeat(2){game.cycleNotebookClue(1)}
+        assertEquals(positions,game.state.value.positions)
+        game.check();assertEquals("result",game.state.value.screen)
+        game.reset();assertTrue(game.state.value.markedClues.isEmpty())
+    }
+    @Test fun explicitDeselectionNeverMovesSuspects(){
+        val game=model();game.openCase("004");game.drop("alma",com.crimegrid.data.Position(0,0))
+        val positions=game.state.value.positions
+        game.clearSelection();assertNull(game.state.value.selectedSuspect)
+        assertEquals(positions,game.state.value.positions)
+    }
 }

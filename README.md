@@ -1,93 +1,67 @@
-# CrimeGrid · 0.4.0
+# CrimeGrid 0.5
 
-Juego Android nativo de deducción espacial, Kotlin + Jetpack Compose. Cuatro investigaciones originales, sin anuncios, compras, permisos de red ni servicios externos durante el juego.
+Juego Android nativo de deducción espacial: Kotlin, Jetpack Compose y MVVM con StateFlow. Cuatro casos locales; sin anuncios, compras, cuentas, permiso de Internet ni servicios externos durante el juego.
 
-## Instalar o compilar
+## Instalar y compilar
 
-Requisitos de compilación: JDK 21 y Android SDK 35 con Build Tools 35. Android Studio puede instalar el SDK. Configura `ANDROID_HOME` o `sdk.dir` en `local.properties`, que no se incluye en la entrega.
+Requisitos: JDK 21, Android SDK 35 y Build Tools 35. Configura `ANDROID_HOME` o `sdk.dir` en `local.properties` (no versionado).
 
 ```sh
 ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug :app:lintDebug
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Compatible con Android 8.0 (API 26) o posterior. El APK está en `app/build/outputs/apk/debug/app-debug.apk`. La versión 0.4.0 tiene `versionCode=4`: puede actualizar la primera entrega conservando su progreso si se firma con la misma clave debug, como ocurre con el APK entregado en esta sesión.
+APK: `app/build/outputs/apk/debug/app-debug.apk`. Android 8.0 o posterior. `versionCode=5`, `versionName=0.5`. La entrega local conserva la firma debug de 0.4 y puede instalarse encima sin desinstalar. El APK generado por otro runner de GitHub puede tener una firma debug distinta.
 
-En GitHub, el workflow **Android debug APK** ejecuta las pruebas y compila. Descarga `CrimeGrid-debug` en Artifacts. Puede iniciarse manualmente desde Actions y no necesita secretos; usa la firma debug estándar. La firma debug de una ejecución de CI distinta puede diferir de la del APK local.
+## Caso 004 · El archivo de las sombras
 
-## Integración gráfica definitiva · caso 004
+La presentación se transforma en una investigación pixel art victoriana:
 
-El caso 004 muestra los 16 fondos originales aprobados según su `manifest.json`: Biblioteca, Despacho, Dormitorio, Baño; Sala de estar, Vestíbulo, Galería, Invernadero; Estrategia, Cocina, Bodega, Música; Tenis, Entrada, Jardín y Cabaña. Los cuatro personajes usan los spritesheets RGBA proporcionados, con animación por dirección, frame quieto y pies anclados al suelo.
+- Mansión cuadrada de 16 habitaciones, a todo el ancho útil, sin coordenadas, nombres, bordes ni separaciones dibujadas sobre el mapa. Las coordenadas se conservan en los datos y en las descripciones accesibles.
+- Sin sospechoso seleccionado, un toque breve amplía una habitación y parte de sus vecinas. **Vista general** devuelve el mapa completo. El zoom no mueve fichas ni escribe posiciones.
+- Con selección activa, tocar una habitación conserva la colocación. **Dejar selección** permite inspeccionar de nuevo. Mantener pulsado un personaje conserva el arrastre, con cancelación fuera del mapa y rechazo rojo de movimientos inválidos.
+- Los sprites originales, su escala relativa, frames, direcciones y animaciones no cambian. El caminar confirmado sigue la matriz de puertas de 0.4. En zoom, sus capas usan la misma cámara y se recortan al viewport.
+- Paneles de cuero/burdeos y bronce, botones de marco recto pixelado, iconos de lupa/pluma/documento y Pixelify Sans empaquetada con licencia OFL. No hay instrucciones contextuales permanentes; la ayuda está en el menú.
+- **Cuaderno** abre el expediente y las pistas en pergamino desplazable. Cada pista cambia manualmente entre Pendiente, Leída y Marcada. Las marcas no verifican pistas ni modifican el motor. Se guardan por caso y el contador reúne las revisadas.
+- El resultado muestra CASO RESUELTO, culpable y ubicación reales, la explicación JSON y pasos obtenidos al aplicar las pistas progresivamente al solucionador. Las cantidades de reconstrucciones y deducciones se calculan, no son narrativa inventada.
 
-La matriz de conexiones es independiente de las imágenes. Las rutas usan puertas y arcos; la fachada solo se atraviesa por B3↔B4 y los exteriores se conectan lateralmente. Un arrastre es una previsualización: al soltar, se comprueban el destino, la ruta y las restricciones de filas/columnas. Si se acepta, la animación sigue los portales. Un rechazo conserva el aviso rojo y la posición anterior. El control de dos toques sigue disponible.
+Los casos 001, 002 y 003 conservan sus pantallas de investigación y sus mecánicas. El menú compartido recibe la nueva apariencia sin cambiar la selección o el progreso de casos.
 
-Los fondos se muestran completos, con proporción original y sin interpolación. No se han retocado ni recortado los PNG aprobados. Los personajes son una capa independiente y ocupan el 34% de la altura de una habitación. Las etiquetas de coordenadas y nombres se superponen para conservar la lectura de las pistas.
+## Conservación del arte y continuidad
 
-**Conservación:** los cuatro JSON de casos, `Engine.kt` y `InvestigationStore.kt` son idénticos a la versión 0.3. El nuevo mapa se añade como un recurso independiente y se asocia al caso 004 al cargarlo. El caso 001 conserva su escena y su despacho D2; el caso 004 ya tenía su despacho en B1. Los otros doce sospechosos mantienen los gráficos anteriores porque no se han proporcionado sprites para ellos.
+Los 20 PNG originales de habitaciones y personajes se conservan byte a byte. El atlas se compone en memoria con los 16 originales y seis parches pequeños. La caché de 16 MB evita decodificar repetidamente imágenes y anclajes. Un único dibujo de atlas con vecino más cercano evita líneas de redondeo entre tiles.
 
-- [Informe de continuidad visual](docs/CONTINUIDAD_VISUAL.md): las 24 costuras, la entrada de fachada y las limitaciones del arte.
-- [Captura nativa del caso 004](docs/art/CASO004.png).
-- `core/src/main/resources/maps/mansion.json`: nombres, rutas de imagen, conexiones y puntos de entrada/salida.
-- `app/src/main/assets/pixelart/mansion/`: fondos y manifiesto originales.
-- `app/src/main/assets/pixelart/characters/`: cuatro spritesheets originales.
-- `docs/art/SHA256_ORIGINALES.json`: integridad de los 20 PNG.
-- `python scripts/audit_art.py`: auditoría reproducible, requiere Pillow; no modifica los PNG.
+La edición artística es **parcial y conservadora**: seis costuras reciben correcciones cromáticas en bandas de ocho píxeles; se conserva el 99,21 % de los píxeles del mapa. Dieciocho uniones conservan sus originales. Persisten discontinuidades arquitectónicas y de caminos que no se han corregido de forma destructiva. No se sustituyen habitaciones, muebles o distribuciones. La conectividad lógica sigue separada del aspecto gráfico.
 
-## Mapa y arrastre · tercera entrega
-
-El caso 001 incorpora una escena configurable de doce habitaciones (tres filas de cuatro) y una franja inferior con cuatro zonas exteriores: tenis, entrada, jardín y fuente provisional. Continúa siendo un tablero lógico 4×4. Los otros casos conservan su cuadrícula.
-
-Mantén pulsado un personaje del panel o uno ya colocado y arrástralo a otra habitación. El personaje sigue al dedo, el destino se resalta y los bordes de pantalla desplazan el contenido para llegar a las habitaciones fuera de vista. Al soltar se comprueba la regla de filas y columnas: un destino inválido parpadea en rojo y conserva la posición anterior. Soltar fuera del tablero o cancelar el gesto no mueve la ficha. El movimiento se guarda únicamente al aceptar el destino. Se conserva el control alternativo nombre → casilla.
-
-Las cuatro zonas exteriores comparten la fila 4: solo puede haber un personaje en todo el exterior. Las coordenadas siguen visibles en pequeño para interpretar las pistas. Las imágenes y sus nombres no afectan al motor lógico.
-
-**Histórico de 0.3:** en esa entrega no se habían suministrado imágenes finales. Se muestran fondos de color y siluetas pixeladas provisionales. La app está preparada para cargar PNG locales sin suavizado, sin red y con fallback si faltan. Consulta [ARTE_PIXELART.md](ARTE_PIXELART.md) para tamaños, plano, carpetas, nombres y un prompt para el chat de generación.
-
-- `app/.../ui/RoomBoard.kt`: mapa con capas de fondo, personajes, etiquetas y feedback.
-- `app/.../ui/DragController.kt`: gesto de pulsación larga, coordenadas globales y destino de la suelta.
-- `app/.../ui/PixelArt.kt`: carga de PNG y siluetas temporales.
-- `case001.json > scene`: 16 destinos visuales, nombres y rutas de imagen.
-
-## Novedades de la segunda entrega
-
-- **Colocación en dos toques:** toca el nombre y después la casilla. El nombre queda seleccionado para poder moverlo con otro toque. Los nombres están antes del tablero y una instrucción indica a quién estás colocando. No requiere confirmar el movimiento.
-- **Rechazo visible:** una casilla inválida emite dos destellos rojos; un mensaje explica el conflicto. El tablero no cambia. Cada intento vuelve a activar la animación, incluso en la misma casilla. No se rechazan posiciones por contradecir una pista durante la partida: las pistas solo se evalúan al comprobar.
-- **Selección de casos:** todos están disponibles desde el menú, con dificultad, estado Pendiente/En curso/Resuelto, fichas colocadas y ayudas usadas. Jugar continúa el último caso. Desde un resultado puedes abrir el siguiente.
-- **Progreso independiente:** cada investigación conserva posiciones, sospechoso seleccionado, pistas marcadas como leídas, ayudas vistas y estado resuelto. Reiniciar afecta solo al caso activo y mantiene su distintivo de Resuelto si ya se completó.
-- **Pistas revisadas:** marca las que ya has leído para organizar la deducción. Es una anotación personal, nunca una indicación automática de si se cumplen.
-- **Tres ayudas opcionales por caso:** primero orientan hacia pistas relevantes, después deducen una fila y finalmente una columna de un solo personaje. Solo aparecen al pulsar Pedir ayuda y su uso se guarda. Cada deducción se verifica por búsqueda exhaustiva usando únicamente las pistas que cita.
-
-Para retirar una ficha, selecciona su nombre y pulsa Retirar seleccionado. Reiniciar vacía el caso activo y restablece sus marcas de lectura y ayudas. Comprobar abre el resultado únicamente cuando la distribución completa satisface las reglas y las pistas.
-
-## Casos
-
-| Caso | Título | Escenario | Dificultad |
-|---|---|---|---|
-| 001 | La última cena | Mansión Valcárcel | Iniciación |
-| 002 | El brindis interrumpido | Hotel Mirador | Intermedio |
-| 003 | La función sin aplausos | Teatro del Albor | Difícil |
-| 004 | El archivo de las sombras | Palacio de Niebla | Experto |
-
-El caso original mantiene su contenido para conservar la primera entrega. Los tres nuevos no fijan filas ni columnas exactas: combinan relaciones, distancias y, en el experto, exclusiones. Las etiquetas de dificultad reflejan el diseño de las pistas y quedan abiertas a ajustar tras pruebas con jugadores.
+- [Informe de las 24 uniones y pendientes](docs/0.5/CONTINUIDAD.md).
+- [Tablero completo](docs/0.5/TABLERO.png).
+- [Habitación ampliada](docs/0.5/ZOOM.png).
+- [Cuaderno](docs/0.5/CUADERNO.png).
+- [Resolución](docs/0.5/RESOLUCION.png).
 
 ## Arquitectura
 
-- `core/.../data`: modelos serializables independientes de Android y Compose, y repositorio que comprueba la integridad y unicidad de cada caso.
-- `core/.../domain`: reglas puras, transiciones inmutables del tablero, evaluación y solucionador por backtracking. Admite tableros 5×5 y 6×6.
-- `core/src/main/resources/cases/case001.json` a `case004.json`: contenido, solución, dificultad y ayudas; ningún componente visual incrusta esos datos.
-- `app/.../data`: guardado JSON local en SharedPreferences, con una entrada por caso. Lee el guardado anterior de `case001` sin borrar sus posiciones.
-- `app/.../ui`: ViewModel MVVM con StateFlow, SavedStateHandle, pantallas Compose y feedback efímero para la animación de rechazo.
+- `core/.../data`: modelos serializables y repositorio de casos.
+- `core/.../domain`: `Engine` y `Navigation` originales; `Resolution` añade una explicación de solo lectura al terminar un caso 4×4.
+- `core/src/main/resources/cases`: los cuatro JSON permanecen intactos, sin cambios de estructura, pistas o solución.
+- `core/src/main/resources/maps/mansion.json`: matriz y portales independientes de las imágenes, sin cambios de 0.4.
+- `app/.../data`: el mismo almacenamiento de progreso. `markedClues` es una extensión opcional del estado, vacía por defecto; los guardados de 0.4 conservan posiciones y marcas leídas.
+- `app/.../ui`: pantallas anteriores conservadas, más `DetectiveScreens`, `MansionMap`, `Notebook`, `DetectiveTheme` y `PixelAssets` para la presentación nueva.
+- `app/src/main/assets/pixelart/mansion/patches`: seis parches visuales y su manifiesto. No son datos de colisión.
 
-Las posiciones internas empiezan en cero; se presentan como columna A–D y fila 1–4. Las reglas incluyen fila/columna exacta, desplazamiento dirigido entre filas o columnas, orden relativo, distancia absoluta y exclusiones. El culpable se deduce del ocupante del despacho. La unicidad se comprueba por reglas, no comparando propuestas con la solución oficial.
+El motor sigue admitiendo tableros 5×5 y 6×6. La explicación exhaustiva de resolución se limita expresamente a los casos 4×4 actuales para no generar trabajo ilimitado en el hilo de interfaz.
 
-Las rotaciones mantienen el ViewModel. SavedStateHandle recupera recreaciones y SharedPreferences conserva el progreso entre procesos. No hay datos personales ni cuentas.
+## Verificación y entrega
 
-## Verificación
+[Resultados de las 53 pruebas y compilación](docs/0.5/VALIDACION.md). Incluyen los 41 tests anteriores, cuaderno persistente, resolución derivada, caché, mapa sin texto/separaciones, zoom, arrastre ampliado, cancelación/rechazo y una pantalla pequeña de 320×568.
 
 ```sh
-./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug :app:lintDebug
+python scripts/audit_art.py
+python scripts/audit_continuity_05.py
 ```
 
-Las pruebas cubren el motor original, unicidad de todos los casos, nuevas reglas y ayudas demostrables, persistencia por caso, migración del guardado anterior, reinicio, ayudas limitadas, rechazo repetido de movimientos y recorridos de interfaz Compose con Robolectric. Informes en `core/build/reports/tests/test/`, `app/build/reports/tests/testDebugUnitTest/` y `app/build/reports/lint-results-debug.html`.
+Estas auditorías opcionales requieren Pillow; no se usan en Android. Verifican originales, las 24 uniones, máscara de cambios y límites cromáticos. La propuesta generativa completa se descartó; `scripts/repair_seams_05.py <propuesta.png>` documenta el proceso conservador.
 
-Consulta `VALIDACION.md` para los resultados concretos de esta entrega y `ARCHIVOS.md` para el inventario. La revisión manual en dispositivo debe incluir rotación, contraste de los destellos rojos, fuentes grandes y TalkBack.
+GitHub Actions ejecuta pruebas y genera el artefacto descargable **CrimeGrid-debug** en cada push o ejecución manual, sin secretos privados. Los informes están en **unit-test-results**. No se incluyen builds, cachés, SDK local ni claves en el repositorio.
+
+Las versiones anteriores permanecen en el historial, sus APK de entrega se conservan y la documentación de 0.4 se archiva en `docs/0.4/`. Las capturas actuales provienen de renderizado nativo de Robolectric; queda revisión en dispositivos físicos, fuentes grandes y TalkBack.

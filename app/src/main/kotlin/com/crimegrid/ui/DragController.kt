@@ -14,6 +14,7 @@ import com.crimegrid.domain.walkDirection
 
 /** Root-space hit testing is independent of source, screen density and scrolling. */
 class DragController {
+    var viewport by mutableStateOf<Rect?>(null)
     val roomBounds = mutableStateMapOf<Position, Rect>()
     var direction by mutableStateOf(WalkDirection.DOWN)
         private set

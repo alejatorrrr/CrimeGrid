@@ -1,0 +1,32 @@
+[
+  {
+    "asset": "pixelart/mansion/patches/B1-B2.png",
+    "x": 268,
+    "y": 252
+  },
+  {
+    "asset": "pixelart/mansion/patches/C1-C2.png",
+    "x": 524,
+    "y": 252
+  },
+  {
+    "asset": "pixelart/mansion/patches/D1-D2.png",
+    "x": 780,
+    "y": 252
+  },
+  {
+    "asset": "pixelart/mansion/patches/A2-B2.png",
+    "x": 252,
+    "y": 268
+  },
+  {
+    "asset": "pixelart/mansion/patches/A2-A3.png",
+    "x": 12,
+    "y": 508
+  },
+  {
+    "asset": "pixelart/mansion/patches/C2-C3.png",
+    "x": 524,
+    "y": 508
+  }
+]

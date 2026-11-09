@@ -29,6 +29,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.TextStyle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.crimegrid.data.*
 import com.crimegrid.domain.Engine
@@ -40,17 +42,23 @@ private val Teal = Color(0xFF88D8CB)
 
 @Composable fun CrimeGridApp(model: InvestigationViewModel) {
     val state by model.state.collectAsStateWithLifecycle()
-    MaterialTheme(colorScheme = darkColorScheme(
+    val detective = state.caseId == "004" || state.screen == "menu"
+    MaterialTheme(typography = if(detective) Typography(
+        bodyLarge=TextStyle(fontFamily=DetectiveType,fontSize=18.sp,lineHeight=24.sp),
+        bodyMedium=TextStyle(fontFamily=DetectiveType,fontSize=16.sp,lineHeight=22.sp),
+        bodySmall=TextStyle(fontFamily=DetectiveType,fontSize=14.sp,lineHeight=20.sp)) else Typography(),
+        colorScheme = if (detective) darkColorScheme(primary=DetectiveGold,onPrimary=DetectiveInk,background=DetectiveInk,
+        surface=DetectiveLeather,onSurface=DetectivePaper,onBackground=DetectivePaper) else darkColorScheme(
         primary = Amber, onPrimary = Ink, secondary = Teal, background = Ink,
         surface = Color(0xFF16212C), onSurface = Paper, onBackground = Paper
     )) {
         BackHandler(state.screen != "menu") { model.menu() }
-        Surface(Modifier.fillMaxSize(), color = Ink) {
+        Surface(Modifier.fillMaxSize(), color = if(detective) DetectiveInk else Ink) {
             Box(Modifier.safeDrawingPadding().fillMaxSize(), contentAlignment = Alignment.TopCenter) {
                 when (state.screen) {
-                    "menu" -> Menu(model, state)
-                    "result" -> Result(model, state)
-                    else -> Investigation(model, state)
+                    "menu" -> DetectiveMenu(model, state)
+                    "result" -> if(state.caseId=="004") DetectiveResult(model,state) else Result(model,state)
+                    else -> if(state.caseId=="004") DetectiveInvestigation(model,state) else Investigation(model,state)
                 }
             }
         }

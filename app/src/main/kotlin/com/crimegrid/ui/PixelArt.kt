@@ -23,7 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 @Composable fun pixelImage(path: String?, modifier: Modifier, content: String? = null, scale: ContentScale = ContentScale.Fit): Boolean {
     val assets = LocalContext.current.assets
     val bitmap = remember(path) {
-        path?.let { runCatching { assets.open(it).use { stream -> BitmapFactory.decodeStream(stream)?.asImageBitmap() } }.getOrNull() }
+        path?.let { PixelAssets.bitmap(assets,it)?.asImageBitmap() }
     }
     if (bitmap != null) Image(bitmap, content, modifier, contentScale = scale, filterQuality = FilterQuality.None)
     return bitmap != null
@@ -59,23 +59,13 @@ fun spriteFileName(id: String): String = Normalizer.normalize(id, Normalizer.For
     }
     val assets = LocalContext.current.assets
     val source = remember(key) {
-        assets.open("pixelart/characters/${key}_walk_48x64.png").use { BitmapFactory.decodeStream(it) }.also {
+        checkNotNull(PixelAssets.bitmap(assets,"pixelart/characters/${key}_walk_48x64.png")).also {
             check(it.width == 192 && it.height == 256 && it.hasAlpha())
         }
     }
     val sheet = remember(source) { source.asImageBitmap() }
-    // Source frames have different transparent margins: anchor the visible bottom of each frame.
-    val feet = remember(source) {
-        Array(4) { row -> Array(4) { frame ->
-            var minX = 48; var maxX = 0; var bottom = 0
-            for (y in 0 until 64) for (x in 0 until 48) {
-                if ((source.getPixel(frame * 48 + x, row * 64 + y) ushr 24) > 32) {
-                    minX = minOf(minX, x); maxX = maxOf(maxX, x); bottom = maxOf(bottom, y + 1)
-                }
-            }
-            Pair((minX + maxX + 1) / 2f, bottom.toFloat())
-        } }
-    }
+    val feet = remember(source) { PixelAssets.spriteFeet(key,source) }
+
     var frame by remember(key) { mutableIntStateOf(0) }
     LaunchedEffect(walking) {
         frame = 0

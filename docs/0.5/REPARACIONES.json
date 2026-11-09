@@ -1,0 +1,372 @@
+{
+  "candidate_sha256": "c06c17421231af5e763cc03e3cbd8f416b63f2a2054238023bbb7cd561663cfd",
+  "output_sha256": "1c533c0fd2ad13dffe817dc63d721d3ca3282777f56b4d589596dd07c0c91ff1",
+  "size": [
+    1024,
+    1024
+  ],
+  "changed_pixels": 8273,
+  "total_pixels": 1048576,
+  "joins": [
+    {
+      "join": "A1-B1",
+      "rect": [
+        252,
+        12,
+        260,
+        244
+      ],
+      "before": 26.96,
+      "candidate": 7.62,
+      "after": 26.96,
+      "patch_difference": 8.96,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "A1-A2",
+      "rect": [
+        12,
+        252,
+        244,
+        260
+      ],
+      "before": 44.21,
+      "candidate": 76.04,
+      "after": 44.21,
+      "patch_difference": 5.99,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B1-C1",
+      "rect": [
+        508,
+        12,
+        516,
+        244
+      ],
+      "before": 10.45,
+      "candidate": 5.36,
+      "after": 10.45,
+      "patch_difference": 8.91,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B1-B2",
+      "rect": [
+        268,
+        252,
+        500,
+        260
+      ],
+      "before": 20.68,
+      "candidate": 62.71,
+      "after": 11.83,
+      "patch_difference": 5.7,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "C1-D1",
+      "rect": [
+        764,
+        12,
+        772,
+        244
+      ],
+      "before": 9.29,
+      "candidate": 6.6,
+      "after": 9.29,
+      "patch_difference": 8.67,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C1-C2",
+      "rect": [
+        524,
+        252,
+        756,
+        260
+      ],
+      "before": 11.68,
+      "candidate": 61.33,
+      "after": 7.31,
+      "patch_difference": 5.93,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "D1-D2",
+      "rect": [
+        780,
+        252,
+        1012,
+        260
+      ],
+      "before": 13.92,
+      "candidate": 61.39,
+      "after": 8.39,
+      "patch_difference": 5.68,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "A2-B2",
+      "rect": [
+        252,
+        268,
+        260,
+        500
+      ],
+      "before": 40.38,
+      "candidate": 8.02,
+      "after": 36.33,
+      "patch_difference": 8.59,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "A2-A3",
+      "rect": [
+        12,
+        508,
+        244,
+        516
+      ],
+      "before": 29.74,
+      "candidate": 100.19,
+      "after": 18.61,
+      "patch_difference": 6.46,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "B2-C2",
+      "rect": [
+        508,
+        268,
+        516,
+        500
+      ],
+      "before": 19.23,
+      "candidate": 6.88,
+      "after": 19.23,
+      "patch_difference": 8.23,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B2-B3",
+      "rect": [
+        268,
+        508,
+        500,
+        516
+      ],
+      "before": 13.76,
+      "candidate": 94.08,
+      "after": 13.76,
+      "patch_difference": 5.63,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C2-D2",
+      "rect": [
+        764,
+        268,
+        772,
+        500
+      ],
+      "before": 24.07,
+      "candidate": 12.64,
+      "after": 24.07,
+      "patch_difference": 8.17,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C2-C3",
+      "rect": [
+        524,
+        508,
+        756,
+        516
+      ],
+      "before": 15.6,
+      "candidate": 89.56,
+      "after": 12.05,
+      "patch_difference": 5.95,
+      "accepted": true,
+      "status": "reparación cromática acotada; geometría amplia conservada"
+    },
+    {
+      "join": "D2-D3",
+      "rect": [
+        780,
+        508,
+        1012,
+        516
+      ],
+      "before": 15.41,
+      "candidate": 88.25,
+      "after": 15.41,
+      "patch_difference": 5.76,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "A3-B3",
+      "rect": [
+        252,
+        524,
+        260,
+        756
+      ],
+      "before": 12.08,
+      "candidate": 8.58,
+      "after": 12.08,
+      "patch_difference": 8.14,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "A3-A4",
+      "rect": [
+        12,
+        764,
+        244,
+        772
+      ],
+      "before": 42.83,
+      "candidate": 42.11,
+      "after": 42.83,
+      "patch_difference": 6.37,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B3-C3",
+      "rect": [
+        508,
+        524,
+        516,
+        756
+      ],
+      "before": 9.14,
+      "candidate": 5.96,
+      "after": 9.14,
+      "patch_difference": 8.14,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B3-B4",
+      "rect": [
+        268,
+        764,
+        500,
+        772
+      ],
+      "before": 37.29,
+      "candidate": 35.62,
+      "after": 37.29,
+      "patch_difference": 6.14,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C3-D3",
+      "rect": [
+        764,
+        524,
+        772,
+        756
+      ],
+      "before": 9.24,
+      "candidate": 12.67,
+      "after": 9.24,
+      "patch_difference": 8.11,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C3-C4",
+      "rect": [
+        524,
+        764,
+        756,
+        772
+      ],
+      "before": 40.65,
+      "candidate": 38.98,
+      "after": 40.65,
+      "patch_difference": 6.34,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "D3-D4",
+      "rect": [
+        780,
+        764,
+        1012,
+        772
+      ],
+      "before": 42.33,
+      "candidate": 39.03,
+      "after": 42.33,
+      "patch_difference": 6.47,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "A4-B4",
+      "rect": [
+        252,
+        780,
+        260,
+        1012
+      ],
+      "before": 24.3,
+      "candidate": 19.6,
+      "after": 24.3,
+      "patch_difference": 6.24,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "B4-C4",
+      "rect": [
+        508,
+        780,
+        516,
+        1012
+      ],
+      "before": 45.22,
+      "candidate": 16.95,
+      "after": 45.22,
+      "patch_difference": 7.42,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    },
+    {
+      "join": "C4-D4",
+      "rect": [
+        764,
+        780,
+        772,
+        1012
+      ],
+      "before": 45.8,
+      "candidate": 48.04,
+      "after": 45.8,
+      "patch_difference": 7.41,
+      "accepted": false,
+      "status": "original conservado: revisión arquitectónica o paisajística pendiente"
+    }
+  ]
+}
