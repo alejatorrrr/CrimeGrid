@@ -1,0 +1,168 @@
+{
+  "version": "selected-art-v1",
+  "tileSize": 256,
+  "gridColumns": 4,
+  "gridRows": 4,
+  "rooms": [
+    {
+      "cell": "A1",
+      "name": "Biblioteca",
+      "file": "A1_Biblioteca.png",
+      "source": "a_detailed_pixel_art_top_down_room_scene_a1_bibli.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "B1",
+      "name": "Despacho",
+      "file": "B1_Despacho.png",
+      "source": "a_pixel_art_top_down_room_b1_despacho_office_w.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "C1",
+      "name": "Dormitorio",
+      "file": "C1_Dormitorio.png",
+      "source": "a_detailed_pixel_art_room_c1_dormitorio_in_top_d.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "D1",
+      "name": "Bano",
+      "file": "D1_Bano.png",
+      "source": "a_detailed_pixel_art_bathroom_in_the_same_top_down.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "A2",
+      "name": "Sala_de_estar",
+      "file": "A2_Sala_de_estar.png",
+      "source": "a_detailed_pixel_art_isometric_top_down_tile_an_o.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "B2",
+      "name": "Vestibulo",
+      "file": "B2_Vestibulo.png",
+      "source": "a_detailed_pixel_art_top_down_isometric_like_symme.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "C2",
+      "name": "Galeria",
+      "file": "C2_Galeria.png",
+      "source": "a_detailed_pixel_art_medieval_gallery_hall_top_do.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "D2",
+      "name": "Invernadero",
+      "file": "D2_Invernadero.png",
+      "source": "a_pixel_art_top_down_interior_room_d2_greenhouse.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "A3",
+      "name": "Sala_de_estrategia",
+      "file": "A3_Sala_de_estrategia.png",
+      "source": "a_detailed_pixel_art_fantasy_interior_a_grand_str.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "B3",
+      "name": "Cocina",
+      "file": "B3_Cocina.png",
+      "source": "a_highly_detailed_pixel_art_medieval_kitchen_inter.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "C3",
+      "name": "Bodega",
+      "file": "C3_Bodega.png",
+      "source": "a_highly_detailed_pixel_art_fantasy_wine_cellar.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "D3",
+      "name": "Sala_de_musica",
+      "file": "D3_Sala_de_musica.png",
+      "source": "a_detailed_pixel_art_ornate_music_room_in_warm_gol.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "A4",
+      "name": "Tenis",
+      "file": "A4_Tenis.png",
+      "source": "a_detailed_pixel_art_scene_for_a4_exterior_lef.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "B4",
+      "name": "Entrada",
+      "file": "B4_Entrada.png",
+      "source": "a_detailed_pixel_art_mansion_exterior_entrance_sce.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "C4",
+      "name": "Jardin",
+      "file": "C4_Jardin.png",
+      "source": "a_seamless_pixel_art_garden_courtyard_scene_brigh.png",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "cell": "D4",
+      "name": "Cabana",
+      "file": "D4_Cabana.png",
+      "source": "a_detailed_pixel_art_scene_a_luxurious_garden_est.png",
+      "size": [
+        256,
+        256
+      ]
+    }
+  ]
+}

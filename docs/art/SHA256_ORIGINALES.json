@@ -1,0 +1,22 @@
+{
+  "app/src/main/assets/pixelart/mansion/A1_Biblioteca.png": "f1a927a62c39e38eedc550b7e3fef5cbe553f300fd203b6864d46803bebbf5a2",
+  "app/src/main/assets/pixelart/mansion/B1_Despacho.png": "0fb2df3dba4f820923c6d44b71136afc2fe40e1fcfa375fb2e4011750b5d2e05",
+  "app/src/main/assets/pixelart/mansion/C1_Dormitorio.png": "1e9923201da8a5879221e20c5e993c83095ea32ead305d52de3ccf69203ec439",
+  "app/src/main/assets/pixelart/mansion/D1_Bano.png": "06efa6698bb50cabc9a4e6568ed323e184110ad95e0f725ca057adb1d6bb5885",
+  "app/src/main/assets/pixelart/mansion/A2_Sala_de_estar.png": "d018a200dcb15ded4304286973fffe72e6152c57bbff9a194014b07ffb5360f3",
+  "app/src/main/assets/pixelart/mansion/B2_Vestibulo.png": "c2472ed7e54d69b3ba9fb0d02cf1ccd457a066b2e954aeb55b8136d6026411cc",
+  "app/src/main/assets/pixelart/mansion/C2_Galeria.png": "a0e2e74ce7a95da5f1a39a7fb2006a7dce2bf2468144b4b87b80b82e94e7c554",
+  "app/src/main/assets/pixelart/mansion/D2_Invernadero.png": "2d6c67e8d405990e2d0c21962757f139dac3eb8743420450033ab6e98243afce",
+  "app/src/main/assets/pixelart/mansion/A3_Sala_de_estrategia.png": "b24b09dd6754a17bc28314e7fef91502089e0bd89954dac4b71fbcca155f2e34",
+  "app/src/main/assets/pixelart/mansion/B3_Cocina.png": "78b99adbe172b718d895f48ca7ea5e7d04e1083317916f3bc46b59390713f6ff",
+  "app/src/main/assets/pixelart/mansion/C3_Bodega.png": "a472d88e44d40ee76e68360001004ca1e1130bd39616bd06ef0d7eed1bf543d3",
+  "app/src/main/assets/pixelart/mansion/D3_Sala_de_musica.png": "6d2652db005da403ca8506232be0c7256eafc1f902f7b8fd80520aebf6cc7c63",
+  "app/src/main/assets/pixelart/mansion/A4_Tenis.png": "e0fe4495eb038db774ef7db337f9f255b6b982b1ed14b14acb3957a98f616fcd",
+  "app/src/main/assets/pixelart/mansion/B4_Entrada.png": "9492362d03eb9750a0306ec3a4ea029f614c8bd3e3aab26ecabc022d59d2d5f1",
+  "app/src/main/assets/pixelart/mansion/C4_Jardin.png": "af4da2b543f5981bd0979a1b7c8fd77e9b748e3931129cfd211bf9fca5851bc6",
+  "app/src/main/assets/pixelart/mansion/D4_Cabana.png": "ee857ee52a45b31da71d1b94b0e443e7276812de16a345b3b2c3b5c41b1ba823",
+  "app/src/main/assets/pixelart/characters/alma_walk_48x64.png": "25f9ed9e9d47946e41ee9572b9afacf7582d5d66c349a48a5220bc8788e8a76a",
+  "app/src/main/assets/pixelart/characters/dario_walk_48x64.png": "e0bfa968aad9069abf16b0736db57e5fd9bdfa4ae125e5b5243f51082ae7fac9",
+  "app/src/main/assets/pixelart/characters/irene_walk_48x64.png": "5c5afe6019f3ef55443d24e08d7eedb3757398642b54c0710d1207f13fd8e45a",
+  "app/src/main/assets/pixelart/characters/tomas_walk_48x64.png": "434c5f4199bbe37b9dc092985a38b73423d716306c5d7dcd4319e960257cbb30"
+}

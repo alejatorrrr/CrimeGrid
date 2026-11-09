@@ -1,0 +1,561 @@
+{
+  "rooms": [
+    {
+      "position": {
+        "row": 0,
+        "column": 0
+      },
+      "name": "Biblioteca",
+      "asset": "pixelart/mansion/A1_Biblioteca.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 0,
+        "column": 1
+      },
+      "name": "Despacho",
+      "asset": "pixelart/mansion/B1_Despacho.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 0,
+        "column": 2
+      },
+      "name": "Dormitorio",
+      "asset": "pixelart/mansion/C1_Dormitorio.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 0,
+        "column": 3
+      },
+      "name": "Baño",
+      "asset": "pixelart/mansion/D1_Bano.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 1,
+        "column": 0
+      },
+      "name": "Sala de estar",
+      "asset": "pixelart/mansion/A2_Sala_de_estar.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 1,
+        "column": 1
+      },
+      "name": "Vestíbulo",
+      "asset": "pixelart/mansion/B2_Vestibulo.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 1,
+        "column": 2
+      },
+      "name": "Galería",
+      "asset": "pixelart/mansion/C2_Galeria.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 1,
+        "column": 3
+      },
+      "name": "Invernadero",
+      "asset": "pixelart/mansion/D2_Invernadero.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 2,
+        "column": 0
+      },
+      "name": "Estrategia",
+      "asset": "pixelart/mansion/A3_Sala_de_estrategia.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 2,
+        "column": 1
+      },
+      "name": "Cocina",
+      "asset": "pixelart/mansion/B3_Cocina.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 2,
+        "column": 2
+      },
+      "name": "Bodega",
+      "asset": "pixelart/mansion/C3_Bodega.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 2,
+        "column": 3
+      },
+      "name": "Música",
+      "asset": "pixelart/mansion/D3_Sala_de_musica.png",
+      "exterior": false,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 3,
+        "column": 0
+      },
+      "name": "Tenis",
+      "asset": "pixelart/mansion/A4_Tenis.png",
+      "exterior": true,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 3,
+        "column": 1
+      },
+      "name": "Entrada",
+      "asset": "pixelart/mansion/B4_Entrada.png",
+      "exterior": true,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 3,
+        "column": 2
+      },
+      "name": "Jardín",
+      "asset": "pixelart/mansion/C4_Jardin.png",
+      "exterior": true,
+      "footX": 0.5,
+      "footY": 0.79
+    },
+    {
+      "position": {
+        "row": 3,
+        "column": 3
+      },
+      "name": "Cabaña",
+      "asset": "pixelart/mansion/D4_Cabana.png",
+      "exterior": true,
+      "footX": 0.5,
+      "footY": 0.79
+    }
+  ],
+  "connections": [
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 0,
+        "column": 1
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 0,
+        "column": 2
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 1
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 0,
+        "column": 3
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 2
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 0,
+        "column": 3
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 3
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 1
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 2
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 1
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 1,
+        "column": 3
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 2
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 1,
+        "column": 3
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 3
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 2,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 1
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 2,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 2
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 2,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 3,
+        "column": 1
+      },
+      "exit": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "entry": {
+        "x": 0.5,
+        "y": 0.0
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 2,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 2,
+        "column": 3
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.5
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.5
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 3,
+        "column": 0
+      },
+      "toPosition": {
+        "row": 3,
+        "column": 1
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.79
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.79
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 3,
+        "column": 1
+      },
+      "toPosition": {
+        "row": 3,
+        "column": 2
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.79
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.79
+      }
+    },
+    {
+      "fromPosition": {
+        "row": 3,
+        "column": 2
+      },
+      "toPosition": {
+        "row": 3,
+        "column": 3
+      },
+      "exit": {
+        "x": 1.0,
+        "y": 0.79
+      },
+      "entry": {
+        "x": 0.0,
+        "y": 0.79
+      }
+    }
+  ],
+  "enforceConnections": true
+}

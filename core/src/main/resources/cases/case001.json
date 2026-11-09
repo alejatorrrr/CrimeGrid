@@ -1,0 +1,272 @@
+{
+  "id": "001",
+  "title": "La última cena",
+  "location": "Mansión Valcárcel",
+  "premise": "La víctima estuvo a solas con su asesino en el despacho D2. Reconstruye dónde estaba cada invitado para identificar al culpable.",
+  "size": 4,
+  "suspects": [
+    {
+      "id": "bruno",
+      "name": "Bruno"
+    },
+    {
+      "id": "clara",
+      "name": "Clara"
+    },
+    {
+      "id": "damián",
+      "name": "Damián"
+    },
+    {
+      "id": "elías",
+      "name": "Elías"
+    }
+  ],
+  "office": {
+    "row": 1,
+    "column": 3
+  },
+  "solution": {
+    "positions": {
+      "bruno": {
+        "row": 0,
+        "column": 1
+      },
+      "clara": {
+        "row": 1,
+        "column": 3
+      },
+      "damián": {
+        "row": 2,
+        "column": 0
+      },
+      "elías": {
+        "row": 3,
+        "column": 2
+      }
+    }
+  },
+  "explanation": "Bruno estaba en B1. Clara, una fila por debajo y en la última columna, estaba en D2. Damián estaba en A3 y Elías en C4. D2 es el despacho: la víctima estuvo allí a solas con Clara. Por tanto, Clara es la culpable.",
+  "clues": [
+    {
+      "text": "Bruno estaba en la primera fila.",
+      "type": "ROW",
+      "subject": "bruno",
+      "value": 0
+    },
+    {
+      "text": "Bruno estaba en la segunda columna.",
+      "type": "COLUMN",
+      "subject": "bruno",
+      "value": 1
+    },
+    {
+      "text": "Clara estaba en la última columna.",
+      "type": "COLUMN",
+      "subject": "clara",
+      "value": 3
+    },
+    {
+      "text": "Clara estaba exactamente una fila por debajo de Bruno.",
+      "type": "ROW_OFFSET",
+      "subject": "clara",
+      "value": 1,
+      "reference": "bruno"
+    },
+    {
+      "text": "Damián estaba en la primera columna.",
+      "type": "COLUMN",
+      "subject": "damián",
+      "value": 0
+    },
+    {
+      "text": "Damián estaba exactamente una fila por debajo de Clara.",
+      "type": "ROW_OFFSET",
+      "subject": "damián",
+      "value": 1,
+      "reference": "clara"
+    },
+    {
+      "text": "Elías estaba exactamente una fila por debajo de Damián.",
+      "type": "ROW_OFFSET",
+      "subject": "elías",
+      "value": 1,
+      "reference": "damián"
+    }
+  ],
+  "difficulty": "Iniciación",
+  "hints": [
+    {
+      "text": "Empieza por las dos pistas sobre Bruno.",
+      "clueIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "text": "La pista 1 fija a Bruno en la fila 1.",
+      "clueIndices": [
+        0
+      ],
+      "subject": "bruno",
+      "row": 0
+    },
+    {
+      "text": "La pista 2 lo sitúa en la columna B. Por tanto, Bruno está en B1.",
+      "clueIndices": [
+        1
+      ],
+      "subject": "bruno",
+      "column": 1
+    }
+  ],
+  "scene": {
+    "rooms": [
+      {
+        "position": {
+          "row": 0,
+          "column": 0
+        },
+        "name": "Vestíbulo",
+        "asset": "pixelart/rooms/vestibulo.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 0,
+          "column": 1
+        },
+        "name": "Biblioteca",
+        "asset": "pixelart/rooms/biblioteca.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 0,
+          "column": 2
+        },
+        "name": "Salón",
+        "asset": "pixelart/rooms/salon.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 0,
+          "column": 3
+        },
+        "name": "Comedor",
+        "asset": "pixelart/rooms/comedor.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 1,
+          "column": 0
+        },
+        "name": "Cocina",
+        "asset": "pixelart/rooms/cocina.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 1,
+          "column": 1
+        },
+        "name": "Galería",
+        "asset": "pixelart/rooms/galeria.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 1,
+          "column": 2
+        },
+        "name": "Sala de música",
+        "asset": "pixelart/rooms/musica.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 1,
+          "column": 3
+        },
+        "name": "Despacho",
+        "asset": "pixelart/rooms/despacho.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 2,
+          "column": 0
+        },
+        "name": "Dormitorio",
+        "asset": "pixelart/rooms/dormitorio.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 2,
+          "column": 1
+        },
+        "name": "Invernadero",
+        "asset": "pixelart/rooms/invernadero.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 2,
+          "column": 2
+        },
+        "name": "Sala de billar",
+        "asset": "pixelart/rooms/billar.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 2,
+          "column": 3
+        },
+        "name": "Archivo",
+        "asset": "pixelart/rooms/archivo.png",
+        "exterior": false
+      },
+      {
+        "position": {
+          "row": 3,
+          "column": 0
+        },
+        "name": "Pista de tenis",
+        "asset": "pixelart/rooms/tenis.png",
+        "exterior": true
+      },
+      {
+        "position": {
+          "row": 3,
+          "column": 1
+        },
+        "name": "Entrada",
+        "asset": "pixelart/rooms/entrada.png",
+        "exterior": true
+      },
+      {
+        "position": {
+          "row": 3,
+          "column": 2
+        },
+        "name": "Jardín",
+        "asset": "pixelart/rooms/jardin.png",
+        "exterior": true
+      },
+      {
+        "position": {
+          "row": 3,
+          "column": 3
+        },
+        "name": "Fuente",
+        "asset": "pixelart/rooms/fuente.png",
+        "exterior": true
+      }
+    ],
+    "exteriorAsset": "pixelart/exterior.png"
+  }
+}

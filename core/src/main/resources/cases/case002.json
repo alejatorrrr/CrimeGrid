@@ -1,0 +1,105 @@
+{
+  "id": "002",
+  "title": "El brindis interrumpido",
+  "location": "Hotel Mirador",
+  "premise": "La víctima estuvo a solas con su asesino en el despacho D1. Los testimonios solo describen relaciones entre posiciones. Reconstruye la distribución para identificar al culpable.",
+  "size": 4,
+  "suspects": [
+    {
+      "id": "inés",
+      "name": "Inés"
+    },
+    {
+      "id": "mateo",
+      "name": "Mateo"
+    },
+    {
+      "id": "nora",
+      "name": "Nora"
+    },
+    {
+      "id": "óscar",
+      "name": "Óscar"
+    }
+  ],
+  "office": {
+    "row": 0,
+    "column": 3
+  },
+  "solution": {
+    "positions": {
+      "inés": {
+        "row": 2,
+        "column": 1
+      },
+      "mateo": {
+        "row": 0,
+        "column": 3
+      },
+      "nora": {
+        "row": 3,
+        "column": 2
+      },
+      "óscar": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  },
+  "clues": [
+    {
+      "text": "Mateo estaba 3 filas por encima de Nora.",
+      "type": "ROW_OFFSET",
+      "subject": "mateo",
+      "value": -3,
+      "reference": "nora"
+    },
+    {
+      "text": "Óscar estaba 1 fila por encima de Inés.",
+      "type": "ROW_OFFSET",
+      "subject": "óscar",
+      "value": -1,
+      "reference": "inés"
+    },
+    {
+      "text": "Óscar estaba 3 columnas a la izquierda de Mateo.",
+      "type": "COLUMN_OFFSET",
+      "subject": "óscar",
+      "value": -3,
+      "reference": "mateo"
+    },
+    {
+      "text": "Óscar estaba 2 columnas a la izquierda de Nora.",
+      "type": "COLUMN_OFFSET",
+      "subject": "óscar",
+      "value": -2,
+      "reference": "nora"
+    }
+  ],
+  "difficulty": "Intermedio",
+  "hints": [
+    {
+      "text": "Empieza por cruzar las pistas 1. Recuerda que las cuatro filas deben quedar ocupadas una sola vez.",
+      "clueIndices": [
+        0
+      ]
+    },
+    {
+      "text": "Las pistas 1, junto con la regla de una persona por fila y columna, obligan a que Mateo esté en la fila 1. Las otras filas no permiten cumplirlas a la vez.",
+      "clueIndices": [
+        0
+      ],
+      "subject": "mateo",
+      "row": 0
+    },
+    {
+      "text": "Al cruzar las pistas 3, la única columna posible para Mateo es D. Con la deducción anterior, ya puedes situar a esta persona.",
+      "clueIndices": [
+        2
+      ],
+      "subject": "mateo",
+      "column": 3
+    }
+  ],
+  "explanation": "La reconstrucción compatible con todos los testimonios es: Inés en B3, Mateo en D1, Nora en C4, Óscar en A2. Mateo ocupaba el despacho D1. Como la víctima estuvo allí a solas con su asesino, Mateo es la persona culpable."
+}

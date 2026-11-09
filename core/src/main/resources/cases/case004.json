@@ -1,0 +1,137 @@
+{
+  "id": "004",
+  "title": "El archivo de las sombras",
+  "location": "Palacio de Niebla",
+  "premise": "La víctima estuvo a solas con su asesino en el despacho B1. Los testimonios solo describen relaciones entre posiciones. Reconstruye la distribución para identificar al culpable.",
+  "size": 4,
+  "suspects": [
+    {
+      "id": "alma",
+      "name": "Alma"
+    },
+    {
+      "id": "darío",
+      "name": "Darío"
+    },
+    {
+      "id": "irene",
+      "name": "Irene"
+    },
+    {
+      "id": "tomás",
+      "name": "Tomás"
+    }
+  ],
+  "office": {
+    "row": 0,
+    "column": 1
+  },
+  "solution": {
+    "positions": {
+      "alma": {
+        "row": 3,
+        "column": 2
+      },
+      "darío": {
+        "row": 1,
+        "column": 0
+      },
+      "irene": {
+        "row": 2,
+        "column": 3
+      },
+      "tomás": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  },
+  "clues": [
+    {
+      "text": "Alma no estaba en la columna B.",
+      "type": "NOT_COLUMN",
+      "subject": "alma",
+      "value": 1
+    },
+    {
+      "text": "Alma no estaba en la fila 3.",
+      "type": "NOT_ROW",
+      "subject": "alma",
+      "value": 2
+    },
+    {
+      "text": "La diferencia entre las filas de Alma y Irene era de 1, sin indicar quién estaba más arriba.",
+      "type": "ROW_DISTANCE",
+      "subject": "alma",
+      "value": 1,
+      "reference": "irene"
+    },
+    {
+      "text": "Alma estaba a la izquierda de Irene, sin precisar la distancia.",
+      "type": "COLUMN_BEFORE",
+      "subject": "alma",
+      "value": 0,
+      "reference": "irene"
+    },
+    {
+      "text": "La diferencia entre las columnas de Irene y Alma era de 1, sin indicar quién estaba a la izquierda.",
+      "type": "COLUMN_DISTANCE",
+      "subject": "irene",
+      "value": 1,
+      "reference": "alma"
+    },
+    {
+      "text": "La diferencia entre las columnas de Tomás y Alma era de 1, sin indicar quién estaba a la izquierda.",
+      "type": "COLUMN_DISTANCE",
+      "subject": "tomás",
+      "value": 1,
+      "reference": "alma"
+    },
+    {
+      "text": "Darío estaba en una fila más alta que Alma, sin precisar la distancia.",
+      "type": "ROW_BEFORE",
+      "subject": "darío",
+      "value": 0,
+      "reference": "alma"
+    },
+    {
+      "text": "La diferencia entre las filas de Tomás y Irene era de 2, sin indicar quién estaba más arriba.",
+      "type": "ROW_DISTANCE",
+      "subject": "tomás",
+      "value": 2,
+      "reference": "irene"
+    }
+  ],
+  "difficulty": "Experto",
+  "hints": [
+    {
+      "text": "Empieza por cruzar las pistas 2, 7, 8. Recuerda que las cuatro filas deben quedar ocupadas una sola vez.",
+      "clueIndices": [
+        1,
+        6,
+        7
+      ]
+    },
+    {
+      "text": "Las pistas 2, 7, 8, junto con la regla de una persona por fila y columna, obligan a que Alma esté en la fila 4. Las otras filas no permiten cumplirlas a la vez.",
+      "clueIndices": [
+        1,
+        6,
+        7
+      ],
+      "subject": "alma",
+      "row": 3
+    },
+    {
+      "text": "Al cruzar las pistas 1, 5, 6, la única columna posible para Alma es C. Con la deducción anterior, ya puedes situar a esta persona.",
+      "clueIndices": [
+        0,
+        4,
+        5
+      ],
+      "subject": "alma",
+      "column": 2
+    }
+  ],
+  "explanation": "La reconstrucción compatible con todos los testimonios es: Alma en C4, Darío en A2, Irene en D3, Tomás en B1. Tomás ocupaba el despacho B1. Como la víctima estuvo allí a solas con su asesino, Tomás es la persona culpable."
+}

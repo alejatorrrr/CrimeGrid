@@ -1,0 +1,125 @@
+{
+  "id": "003",
+  "title": "La función sin aplausos",
+  "location": "Teatro del Albor",
+  "premise": "La víctima estuvo a solas con su asesino en el despacho B1. Los testimonios solo describen relaciones entre posiciones. Reconstruye la distribución para identificar al culpable.",
+  "size": 4,
+  "suspects": [
+    {
+      "id": "ada",
+      "name": "Ada"
+    },
+    {
+      "id": "gael",
+      "name": "Gael"
+    },
+    {
+      "id": "lara",
+      "name": "Lara"
+    },
+    {
+      "id": "víctor",
+      "name": "Víctor"
+    }
+  ],
+  "office": {
+    "row": 0,
+    "column": 1
+  },
+  "solution": {
+    "positions": {
+      "ada": {
+        "row": 1,
+        "column": 2
+      },
+      "gael": {
+        "row": 3,
+        "column": 0
+      },
+      "lara": {
+        "row": 0,
+        "column": 1
+      },
+      "víctor": {
+        "row": 2,
+        "column": 3
+      }
+    }
+  },
+  "clues": [
+    {
+      "text": "La diferencia entre las filas de Víctor y Gael era de 1, sin indicar quién estaba más arriba.",
+      "type": "ROW_DISTANCE",
+      "subject": "víctor",
+      "value": 1,
+      "reference": "gael"
+    },
+    {
+      "text": "Lara estaba a la izquierda de Víctor, sin precisar la distancia.",
+      "type": "COLUMN_BEFORE",
+      "subject": "lara",
+      "value": 0,
+      "reference": "víctor"
+    },
+    {
+      "text": "Ada estaba 1 columna a la derecha de Lara.",
+      "type": "COLUMN_OFFSET",
+      "subject": "ada",
+      "value": 1,
+      "reference": "lara"
+    },
+    {
+      "text": "Ada estaba 1 fila por debajo de Lara.",
+      "type": "ROW_OFFSET",
+      "subject": "ada",
+      "value": 1,
+      "reference": "lara"
+    },
+    {
+      "text": "Víctor estaba 1 fila por debajo de Ada.",
+      "type": "ROW_OFFSET",
+      "subject": "víctor",
+      "value": 1,
+      "reference": "ada"
+    },
+    {
+      "text": "La diferencia entre las columnas de Lara y Gael era de 1, sin indicar quién estaba a la izquierda.",
+      "type": "COLUMN_DISTANCE",
+      "subject": "lara",
+      "value": 1,
+      "reference": "gael"
+    }
+  ],
+  "difficulty": "Difícil",
+  "hints": [
+    {
+      "text": "Empieza por cruzar las pistas 1, 4, 5. Recuerda que las cuatro filas deben quedar ocupadas una sola vez.",
+      "clueIndices": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "text": "Las pistas 1, 4, 5, junto con la regla de una persona por fila y columna, obligan a que Ada esté en la fila 2. Las otras filas no permiten cumplirlas a la vez.",
+      "clueIndices": [
+        0,
+        3,
+        4
+      ],
+      "subject": "ada",
+      "row": 1
+    },
+    {
+      "text": "Al cruzar las pistas 2, 3, 6, la única columna posible para Ada es C. Con la deducción anterior, ya puedes situar a esta persona.",
+      "clueIndices": [
+        1,
+        2,
+        5
+      ],
+      "subject": "ada",
+      "column": 2
+    }
+  ],
+  "explanation": "La reconstrucción compatible con todos los testimonios es: Ada en C2, Gael en A4, Lara en B1, Víctor en D3. Lara ocupaba el despacho B1. Como la víctima estuvo allí a solas con su asesino, Lara es la persona culpable."
+}
