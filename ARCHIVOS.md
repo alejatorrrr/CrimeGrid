@@ -1,6 +1,6 @@
-# Archivos · CrimeGrid 0.5
+# Archivos · CrimeGrid 0.5.1
 
-Inventario del proyecto existente, sin builds, cachés, configuración local ni claves.
+Proyecto existente con castillo 003 y visor. Builds, cachés, configuración local y claves excluidos.
 
 - `.github/workflows/android.yml`
 - `.gitignore`
@@ -12,6 +12,23 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `app/build.gradle.kts`
 - `app/src/main/AndroidManifest.xml`
 - `app/src/main/assets/licenses/PixelifySans-OFL.txt`
+- `app/src/main/assets/pixelart/castle003/A1.png`
+- `app/src/main/assets/pixelart/castle003/A2.png`
+- `app/src/main/assets/pixelart/castle003/A3.png`
+- `app/src/main/assets/pixelart/castle003/A4.png`
+- `app/src/main/assets/pixelart/castle003/B1.png`
+- `app/src/main/assets/pixelart/castle003/B2.png`
+- `app/src/main/assets/pixelart/castle003/B3.png`
+- `app/src/main/assets/pixelart/castle003/B4.png`
+- `app/src/main/assets/pixelart/castle003/C1.png`
+- `app/src/main/assets/pixelart/castle003/C2.png`
+- `app/src/main/assets/pixelart/castle003/C3.png`
+- `app/src/main/assets/pixelart/castle003/C4.png`
+- `app/src/main/assets/pixelart/castle003/D1.png`
+- `app/src/main/assets/pixelart/castle003/D2.png`
+- `app/src/main/assets/pixelart/castle003/D3.png`
+- `app/src/main/assets/pixelart/castle003/D4.png`
+- `app/src/main/assets/pixelart/castle003/manifest.json`
 - `app/src/main/assets/pixelart/characters/alma_walk_48x64.png`
 - `app/src/main/assets/pixelart/characters/dario_walk_48x64.png`
 - `app/src/main/assets/pixelart/characters/irene_walk_48x64.png`
@@ -42,6 +59,7 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `app/src/main/assets/pixelart/mansion/patches/manifest.json`
 - `app/src/main/kotlin/com/crimegrid/MainActivity.kt`
 - `app/src/main/kotlin/com/crimegrid/data/InvestigationStore.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/CastleArt.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/CrimeGridApp.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/DetectiveScreens.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/DetectiveTheme.kt`
@@ -52,6 +70,8 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `app/src/main/kotlin/com/crimegrid/ui/PixelArt.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/PixelAssets.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/RoomBoard.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/RoomGestures.kt`
+- `app/src/main/kotlin/com/crimegrid/ui/RoomInspector.kt`
 - `app/src/main/kotlin/com/crimegrid/ui/WalkingLayer.kt`
 - `app/src/main/res/drawable/ic_crimegrid.xml`
 - `app/src/main/res/font/pixelify_sans.ttf`
@@ -59,12 +79,14 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `app/src/main/res/xml/data_extraction_rules.xml`
 - `app/src/test/kotlin/com/crimegrid/ui/ApprovedAssetsTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/ApprovedMapUiTest.kt`
+- `app/src/test/kotlin/com/crimegrid/ui/CastleInspectorTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/CrimeGridUiTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/Detective05UiTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/DragControllerTest.kt`
 - `app/src/test/kotlin/com/crimegrid/ui/InvestigationViewModelTest.kt`
 - `build.gradle.kts`
 - `core/build.gradle.kts`
+- `core/src/main/kotlin/com/crimegrid/data/ArtMap.kt`
 - `core/src/main/kotlin/com/crimegrid/data/CaseRepository.kt`
 - `core/src/main/kotlin/com/crimegrid/data/Models.kt`
 - `core/src/main/kotlin/com/crimegrid/domain/Engine.kt`
@@ -76,6 +98,7 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `core/src/main/resources/cases/case004.json`
 - `core/src/main/resources/maps/mansion.json`
 - `core/src/test/kotlin/com/crimegrid/domain/CampaignTest.kt`
+- `core/src/test/kotlin/com/crimegrid/domain/CastleArtTest.kt`
 - `core/src/test/kotlin/com/crimegrid/domain/EngineTest.kt`
 - `core/src/test/kotlin/com/crimegrid/domain/NavigationTest.kt`
 - `core/src/test/kotlin/com/crimegrid/domain/ResolutionTest.kt`
@@ -95,6 +118,13 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `docs/art/ORIGEN_SPRITES.md`
 - `docs/art/SHA256_ORIGINALES.json`
 - `docs/art/SPRITES_AUDITORIA.json`
+- `docs/castle003/INTEGRACION.md`
+- `docs/castle003/LOGICA_003_BASE.json`
+- `docs/castle003/MAPA.png`
+- `docs/castle003/ORIGINALES_SHA256.json`
+- `docs/castle003/UNIONES.csv`
+- `docs/castle003/VALIDACION.md`
+- `docs/castle003/VISOR.png`
 - `docs/licenses/PixelifySans-OFL.txt`
 - `gradle.properties`
 - `gradle/wrapper/gradle-wrapper.jar`
@@ -102,6 +132,7 @@ Inventario del proyecto existente, sin builds, cachés, configuración local ni 
 - `gradlew`
 - `gradlew.bat`
 - `scripts/audit_art.py`
+- `scripts/audit_castle003.py`
 - `scripts/audit_continuity_05.py`
 - `scripts/repair_seams_05.py`
 - `settings.gradle.kts`

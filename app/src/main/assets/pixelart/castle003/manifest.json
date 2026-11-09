@@ -1,0 +1,191 @@
+{
+  "case_id": "005",
+  "theme": "castillo_encantado",
+  "source_size": [
+    1536,
+    1536
+  ],
+  "tile_size": [
+    384,
+    384
+  ],
+  "orientation": "columns A-D left-to-right; rows 1-4 top-to-bottom",
+  "rooms": [
+    {
+      "id": "A1",
+      "name": "Biblioteca maldita",
+      "file": "A1.png",
+      "source_crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    {
+      "id": "B1",
+      "name": "Salón del trono",
+      "file": "B1.png",
+      "source_crop": [
+        384,
+        0,
+        768,
+        384
+      ]
+    },
+    {
+      "id": "C1",
+      "name": "Cámara real",
+      "file": "C1.png",
+      "source_crop": [
+        768,
+        0,
+        1152,
+        384
+      ]
+    },
+    {
+      "id": "D1",
+      "name": "Observatorio",
+      "file": "D1.png",
+      "source_crop": [
+        1152,
+        0,
+        1536,
+        384
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Laboratorio alquímico",
+      "file": "A2.png",
+      "source_crop": [
+        0,
+        384,
+        384,
+        768
+      ]
+    },
+    {
+      "id": "B2",
+      "name": "Gran distribuidor",
+      "file": "B2.png",
+      "source_crop": [
+        384,
+        384,
+        768,
+        768
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "Comedor noble",
+      "file": "C2.png",
+      "source_crop": [
+        768,
+        384,
+        1152,
+        768
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "Jardín interior",
+      "file": "D2.png",
+      "source_crop": [
+        1152,
+        384,
+        1536,
+        768
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Sala de rituales",
+      "file": "A3.png",
+      "source_crop": [
+        0,
+        768,
+        384,
+        1152
+      ]
+    },
+    {
+      "id": "B3",
+      "name": "Armería",
+      "file": "B3.png",
+      "source_crop": [
+        384,
+        768,
+        768,
+        1152
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "Capilla",
+      "file": "C3.png",
+      "source_crop": [
+        768,
+        768,
+        1152,
+        1152
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "Cripta",
+      "file": "D3.png",
+      "source_crop": [
+        1152,
+        768,
+        1536,
+        1152
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Cocina",
+      "file": "A4.png",
+      "source_crop": [
+        0,
+        1152,
+        384,
+        1536
+      ]
+    },
+    {
+      "id": "B4",
+      "name": "Barracones",
+      "file": "B4.png",
+      "source_crop": [
+        384,
+        1152,
+        768,
+        1536
+      ]
+    },
+    {
+      "id": "C4",
+      "name": "Mazmorras",
+      "file": "C4.png",
+      "source_crop": [
+        768,
+        1152,
+        1152,
+        1536
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "Tesorería",
+      "file": "D4.png",
+      "source_crop": [
+        1152,
+        1152,
+        1536,
+        1536
+      ]
+    }
+  ]
+}

@@ -52,7 +52,9 @@ fun spriteFileName(id: String): String = Normalizer.normalize(id, Normalizer.For
 
 /** Four supplied sheets are drawn by frame, never squeezed into a single still image. */
 @Composable fun CharacterSprite(id: String, modifier: Modifier, direction: WalkDirection = WalkDirection.DOWN, walking: Boolean = false) {
-    val key = spriteFileName(id)
+    val key = when(val normalized=spriteFileName(id)) {
+        "ada"->"alma";"gael"->"dario";"lara"->"irene";"victor"->"tomas";else->normalized
+    }
     if (key !in setOf("alma", "dario", "irene", "tomas")) {
         PlaceholderSprite(id, modifier)
         return

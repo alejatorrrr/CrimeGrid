@@ -8,7 +8,7 @@ android {
  namespace = "com.crimegrid"
  compileSdk = 35
  buildToolsVersion = "35.0.0"
- defaultConfig { applicationId = "com.crimegrid"; minSdk = 26; targetSdk = 35; versionCode = 5; versionName = "0.5" }
+ defaultConfig { applicationId = "com.crimegrid"; minSdk = 26; targetSdk = 35; versionCode = 6; versionName = "0.5.1" }
  buildFeatures { compose = true }
  testOptions { unitTests.isIncludeAndroidResources = true }
  compileOptions { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }

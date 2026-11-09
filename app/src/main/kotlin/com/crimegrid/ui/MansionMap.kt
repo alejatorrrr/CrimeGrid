@@ -57,10 +57,10 @@ private object MansionAtlas {
 /** A single nearest-neighbor atlas prevents subpixel seams. Hit targets use the identical camera. */
 @Composable fun MansionMap(case: Case, state: InvestigationState, feedback: MoveFeedback?, drag: DragController,
     walk: InvestigationViewModel.Walk?, facing: Map<String,WalkDirection>, focus: Int?,
-    onRoomTap: (Position)->Unit, onDrop:(String,Position)->Unit) {
+    onRoomTap: (Position)->Unit, onDrop:(String,Position)->Unit, onInspect:(String)->Unit={}) {
     val scene=checkNotNull(case.scene)
     val assets=LocalContext.current.assets
-    val atlas=remember { MansionAtlas.load(assets,scene) }
+    val atlas=remember(case.id) { if(case.id=="003") CastleArtwork.atlas(assets,CastleArtwork.manifest(assets)) else MansionAtlas.load(assets,scene) }
     val scale by animateFloatAsState(if(focus==null) 1f else 2.4f,tween(320),label="room-zoom")
     val targetX=if(focus==null) 0f else (.5f-2.4f*((focus%4+.5f)/4)).coerceIn(1f-2.4f,0f)
     val targetY=if(focus==null) 0f else (.5f-2.4f*((focus/4+.5f)/4)).coerceIn(1f-2.4f,0f)
@@ -97,11 +97,12 @@ private object MansionAtlas {
                     drag.roomBounds[pos]=Rect(it.positionInRoot(),Size(it.size.width.toFloat(),it.size.height.toFloat()))
                 }
                 .testTag("map-cell-${pos.label}")
-                .dragCharacter(suspect?.id,drag,onDrop)
-                .clickable(interactionSource=remember{MutableInteractionSource()},indication=null){onRoomTap(pos)}
+                .roomGestures(suspect?.id,state.selectedSuspect,room.footX,room.footY,drag,{onRoomTap(pos)},{onInspect(room.asset)},onDrop)
                 .semantics {
-                    contentDescription="Casilla ${pos.label}${if(pos==case.office) ", despacho" else ""}, ${suspect?.name?:"vacía"}"
+                    contentDescription="Casilla ${pos.label}${if(pos==case.office) ", ${room.name.lowercase()}" else ""}, ${suspect?.name?:"vacía"}"
                     if(feedback?.position==pos) stateDescription="Movimiento rechazado"
+                    onClick{onRoomTap(pos);true}
+                    if(state.selectedSuspect==null) onLongClick(label="Inspeccionar"){onInspect(room.asset);true}
                 }) {
                 if(suspect!=null && state.selectedSuspect==suspect.id) Canvas(Modifier.fillMaxSize()) {
                     val px=(size.width/48).coerceAtLeast(1f)

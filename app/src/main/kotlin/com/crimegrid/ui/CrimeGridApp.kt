@@ -42,7 +42,7 @@ private val Teal = Color(0xFF88D8CB)
 
 @Composable fun CrimeGridApp(model: InvestigationViewModel) {
     val state by model.state.collectAsStateWithLifecycle()
-    val detective = state.caseId == "004" || state.screen == "menu"
+    val detective = state.caseId in setOf("003","004") || state.screen == "menu"
     MaterialTheme(typography = if(detective) Typography(
         bodyLarge=TextStyle(fontFamily=DetectiveType,fontSize=18.sp,lineHeight=24.sp),
         bodyMedium=TextStyle(fontFamily=DetectiveType,fontSize=16.sp,lineHeight=22.sp),
@@ -57,8 +57,8 @@ private val Teal = Color(0xFF88D8CB)
             Box(Modifier.safeDrawingPadding().fillMaxSize(), contentAlignment = Alignment.TopCenter) {
                 when (state.screen) {
                     "menu" -> DetectiveMenu(model, state)
-                    "result" -> if(state.caseId=="004") DetectiveResult(model,state) else Result(model,state)
-                    else -> if(state.caseId=="004") DetectiveInvestigation(model,state) else Investigation(model,state)
+                    "result" -> if(state.caseId in setOf("003","004")) DetectiveResult(model,state) else Result(model,state)
+                    else -> if(state.caseId in setOf("003","004")) DetectiveInvestigation(model,state) else Investigation(model,state)
                 }
             }
         }

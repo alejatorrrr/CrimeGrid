@@ -1,3 +1,7 @@
+# Validación actual · CrimeGrid 0.5.1
+
+[58 pruebas, compilación, visor y castillo](docs/castle003/VALIDACION.md).
+
 # Validación actual · CrimeGrid 0.5
 
 [Resultados de las 53 pruebas, compilación y limitaciones](docs/0.5/VALIDACION.md).

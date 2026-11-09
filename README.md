@@ -1,4 +1,4 @@
-# CrimeGrid 0.5
+# CrimeGrid 0.5.1
 
 Juego Android nativo de deducción espacial: Kotlin, Jetpack Compose y MVVM con StateFlow. Cuatro casos locales; sin anuncios, compras, cuentas, permiso de Internet ni servicios externos durante el juego.
 
@@ -11,7 +11,22 @@ Requisitos: JDK 21, Android SDK 35 y Build Tools 35. Configura `ANDROID_HOME` o 
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-APK: `app/build/outputs/apk/debug/app-debug.apk`. Android 8.0 o posterior. `versionCode=5`, `versionName=0.5`. La entrega local conserva la firma debug de 0.4 y puede instalarse encima sin desinstalar. El APK generado por otro runner de GitHub puede tener una firma debug distinta.
+APK: `app/build/outputs/apk/debug/app-debug.apk`. Android 8.0 o posterior. `versionCode=6`, `versionName=0.5.1`. La entrega local conserva la firma debug de 0.4 y puede instalarse encima sin desinstalar. El APK generado por otro runner de GitHub puede tener una firma debug distinta.
+
+## Caso 003 · El castillo encantado
+
+El castillo adjunto se asocia al **003**, según la aclaración del usuario. El nombre del ZIP y el manifiesto original indicaban 005: se conservan como procedencia sin crear un caso adicional. Los 16 PNG de 384×384 se utilizan completos y sin retoques, componiendo en memoria un mapa 1536×1536 que se dibuja con vecino más cercano.
+
+El 003 usa ahora la misma interfaz pixel art, cuaderno, controles, zoom corto y reglas de colocación del 004. Se conserva la lógica preexistente del 003: Ada, Gael, Lara y Víctor, sus seis pistas, ayudas, posición B1 del crimen y solución. Solo se adapta la ambientación narrativa; B1 es el salón del trono del manifiesto. Los sprites ya existentes se reutilizan como apariencia de esos personajes, sin generar hojas nuevas ni modificar sus frames.
+
+**Nuevo visor:** sin selección, mantener pulsado el suelo abre una vista de solo lectura. Permite pellizco con dos dedos, desplazamiento y cierre, sin mostrar nombre o coordenadas. Mantener pulsado el personaje da prioridad al arrastre; el toque breve mantiene la colocación o el zoom existente. Esto también está disponible en el 004 sin cambiar su estilo ni sus imágenes.
+
+- [Integración, procedencia y 24 uniones](docs/castle003/INTEGRACION.md).
+- [Captura del mapa](docs/castle003/MAPA.png) y [visor](docs/castle003/VISOR.png).
+- [Pruebas de esta entrega](docs/castle003/VALIDACION.md).
+- `python scripts/audit_castle003.py`: hashes, cobertura exacta de recortes y lógica preservada.
+
+La imagen madre completa no estaba incluida: se verifica cada píxel contra los recortes y sus coordenadas, sin afirmar una comparación binaria contra un archivo no suministrado. No se inventa una matriz de puertas para el castillo; mantiene la validación de colocación del 003. La navegación por puertas del 004 permanece intacta.
 
 ## Caso 004 · El archivo de las sombras
 
@@ -25,7 +40,7 @@ La presentación se transforma en una investigación pixel art victoriana:
 - **Cuaderno** abre el expediente y las pistas en pergamino desplazable. Cada pista cambia manualmente entre Pendiente, Leída y Marcada. Las marcas no verifican pistas ni modifican el motor. Se guardan por caso y el contador reúne las revisadas.
 - El resultado muestra CASO RESUELTO, culpable y ubicación reales, la explicación JSON y pasos obtenidos al aplicar las pistas progresivamente al solucionador. Las cantidades de reconstrucciones y deducciones se calculan, no son narrativa inventada.
 
-Los casos 001, 002 y 003 conservan sus pantallas de investigación y sus mecánicas. El menú compartido recibe la nueva apariencia sin cambiar la selección o el progreso de casos.
+Los casos 001 y 002 conservan sus pantallas de prueba y sus mecánicas. El 003 adopta la presentación de investigación descrita arriba. El menú compartido recibe la nueva apariencia sin cambiar la selección o el progreso de casos.
 
 ## Conservación del arte y continuidad
 

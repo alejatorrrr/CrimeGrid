@@ -10,9 +10,11 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [28], qualifiers = "w393dp-h852dp")
+@GraphicsMode(GraphicsMode.Mode.NATIVE)
 class CrimeGridUiTest {
     @get:Rule val compose = createComposeRule()
     @Before fun start() {
@@ -48,9 +50,11 @@ class CrimeGridUiTest {
 
     @Test fun playerCanChooseCaseAndRequestOptionalHelp() {
         compose.onNodeWithText("Abrir caso 003").performScrollTo().performClick()
-        compose.onNodeWithText("La función sin aplausos").assertExists()
+        compose.onNodeWithText("El castillo encantado").assertExists()
+        compose.onNodeWithText("Cuaderno").performScrollTo().performClick()
         compose.onNodeWithText("Pedir ayuda (0/3)").performScrollTo().performClick()
         compose.onNodeWithText("Pedir ayuda (1/3)").assertExists()
+        compose.onNodeWithText("Cerrar cuaderno").performClick()
         compose.onNodeWithText("Menú").performScrollTo().performClick()
         compose.onNodeWithText("En curso · 0/4 colocados · 1 ayuda").performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("Abrir caso 002").performScrollTo().performClick()

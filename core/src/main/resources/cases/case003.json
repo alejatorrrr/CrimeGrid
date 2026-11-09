@@ -1,8 +1,8 @@
 {
   "id": "003",
-  "title": "La función sin aplausos",
-  "location": "Teatro del Albor",
-  "premise": "La víctima estuvo a solas con su asesino en el despacho B1. Los testimonios solo describen relaciones entre posiciones. Reconstruye la distribución para identificar al culpable.",
+  "title": "El castillo encantado",
+  "location": "Castillo antiguo",
+  "premise": "En un antiguo castillo de pasillos silenciosos y luces espectrales, la víctima estuvo a solas con su asesino en el salón del trono B1. Los testimonios solo describen relaciones entre posiciones. Reconstruye la distribución para identificar al culpable.",
   "size": 4,
   "suspects": [
     {
@@ -121,5 +121,5 @@
       "column": 2
     }
   ],
-  "explanation": "La reconstrucción compatible con todos los testimonios es: Ada en C2, Gael en A4, Lara en B1, Víctor en D3. Lara ocupaba el despacho B1. Como la víctima estuvo allí a solas con su asesino, Lara es la persona culpable."
+  "explanation": "La reconstrucción compatible con todos los testimonios es: Ada en C2, Gael en A4, Lara en B1, Víctor en D3. Lara ocupaba el salón del trono B1. Como la víctima estuvo allí a solas con su asesino, Lara es la persona culpable."
 }

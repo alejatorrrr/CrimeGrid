@@ -56,6 +56,7 @@ import kotlin.math.roundToInt
 }
 
 @Composable fun DetectiveInvestigation(model:InvestigationViewModel,state:InvestigationState) {
+    var inspected by rememberSaveable{mutableStateOf<String?>(null)}
     var notebook by rememberSaveable { mutableStateOf(false) }
     var focus by rememberSaveable { mutableStateOf<Int?>(null) }
     val drag=remember { DragController() }
@@ -67,7 +68,7 @@ import kotlin.math.roundToInt
     val scroll=rememberScrollState()
     val edge=with(LocalDensity.current){64.dp.toPx()}
     val speed=with(LocalDensity.current){10.dp.toPx()}
-    BackHandler { when {notebook->notebook=false;focus!=null->focus=null;else->model.menu()} }
+    BackHandler { when {inspected!=null->inspected=null;notebook->notebook=false;focus!=null->focus=null;else->model.menu()} }
     LaunchedEffect(drag.suspect){
         if(drag.suspect!=null) while(true){
             when {drag.point.y-origin.y<edge->scroll.scrollBy(-speed);drag.point.y-origin.y>viewport-edge->scroll.scrollBy(speed)}
@@ -75,7 +76,7 @@ import kotlin.math.roundToInt
         }
     }
     Box(Modifier.fillMaxSize().clipToBounds().onGloballyPositioned{origin=it.positionInRoot();viewport=it.size.height}){
-        Column(Modifier.fillMaxSize().verticalScroll(scroll,enabled=drag.suspect==null).semantics{if(notebook)invisibleToUser()},verticalArrangement=Arrangement.spacedBy(10.dp)){
+        Column(Modifier.fillMaxSize().verticalScroll(scroll,enabled=drag.suspect==null).semantics{if(notebook || inspected!=null)invisibleToUser()},verticalArrangement=Arrangement.spacedBy(10.dp)){
             Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=6.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)){
                 Column(Modifier.weight(1f)){
                     Text("EXPEDIENTE ${model.case.id}",color=DetectiveGold,fontFamily=FontFamily.Monospace,fontSize=11.sp)
@@ -85,7 +86,7 @@ import kotlin.math.roundToInt
             }
             MansionMap(model.case,state,feedback,drag,walk,facing,focus,{position->
                 if(state.selectedSuspect!=null) model.place(position) else focus=position.row*4+position.column
-            },model::drop)
+            },{id,pos->facing[id]=drag.direction;model.drop(id,pos)},{asset->inspected=asset})
             if(focus!=null) PixelButton("Vista general",{focus=null},Modifier.fillMaxWidth().padding(horizontal=12.dp))
             Column(Modifier.padding(horizontal=12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)){
                 Text("SOSPECHOSOS · ${state.positions.size}/${model.case.suspects.size}",color=DetectiveGold,fontFamily=FontFamily.Monospace,fontSize=12.sp)
@@ -131,6 +132,7 @@ import kotlin.math.roundToInt
             CharacterSprite(id,Modifier.offset{IntOffset((drag.point.x-origin.x).roundToInt()-24.dp.roundToPx(),(drag.point.y-origin.y).roundToInt()-66.dp.roundToPx())}
                 .size(48.dp,64.dp),drag.direction,walking=true)
         }
+        inspected?.let{asset->RoomInspector(asset){inspected=null}}
         if(notebook) androidx.compose.material3.Surface(Modifier.fillMaxSize().pointerInput(Unit){detectTapGestures{}},color=DetectiveInk){InvestigationNotebook(model,state){notebook=false}}
     }
 }

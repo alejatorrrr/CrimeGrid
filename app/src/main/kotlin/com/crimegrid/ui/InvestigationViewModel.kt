@@ -15,10 +15,14 @@ data class MoveFeedback(val position: Position, val sequence: Long)
 
 class InvestigationViewModel(context: Context, private val savedState: SavedStateHandle) : ViewModel() {
     private val mansion = Json.decodeFromString<Scene>(checkNotNull(javaClass.getResourceAsStream("/maps/mansion.json")).bufferedReader().use { it.readText() }).also(Navigation::validate)
+    private val castleArt = ArtMapRepository { context.assets.open("pixelart/castle003/manifest.json").bufferedReader().use { it.readText() } }.load()
+    private val castle = Scene(castleArt.rooms.map { room ->
+        Room(Position(room.id[1]-'1',room.id[0]-'A'),room.name,"pixelart/castle003/${room.file}")
+    })
     val cases = listOf("001", "002", "003", "004").map { id ->
         CaseRepository {
             checkNotNull(javaClass.getResourceAsStream("/cases/case$id.json")).bufferedReader().use { it.readText() }
-        }.load().let { if (it.id == "004") it.copy(scene = mansion) else it }
+        }.load().let { when(it.id){"004"->it.copy(scene=mansion);"003"->it.copy(scene=castle);else->it} }
     }
     private val store = InvestigationStore(context.applicationContext)
     private fun sanitize(restored: InvestigationState): InvestigationState {

@@ -1,5 +1,14 @@
 # Cambios
 
+## 0.5.1
+
+- Integra el castillo en el caso 003 con los 16 PNG originales 384×384 y un atlas sin separaciones.
+- Conserva los datos lógicos del 003; adapta solo título y ambientación al castillo y al salón del trono B1.
+- Reutiliza los sprites existentes y la interfaz de investigación del 004, sin alterar la mansión.
+- Añade visor de habitación por pulsación prolongada, pellizco, desplazamiento y cierre sin revelar identidad.
+- Unifica el arbitraje entre inspección de suelo y arrastre de personaje.
+- Añade auditoría de originales, cobertura de recortes, 24 uniones y pruebas nativas.
+
 ## 0.5
 
 - Presentación nueva y aislada del caso 004; los demás casos conservan su investigación.
