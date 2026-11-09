@@ -38,6 +38,9 @@ class ApprovedMapUiTest {
         val board=compose.onNodeWithTag("room-board").performScrollTo()
         compose.onNodeWithContentDescription("Casilla A1, Alma").assertExists()
         compose.onNodeWithContentDescription("Casilla D4, tomás",ignoreCase=true).assertExists()
+        val thirdRow = compose.onNodeWithContentDescription("Casilla A3, vacía").fetchSemanticsNode().boundsInRoot
+        val fourthRow = compose.onNodeWithContentDescription("Casilla A4, vacía").fetchSemanticsNode().boundsInRoot
+        org.junit.Assert.assertTrue("Approved map rows must stay adjacent", fourthRow.top - thirdRow.bottom <= 4f)
         compose.runOnIdle {
             val activity = androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry.getInstance()
                 .getActivitiesInStage(androidx.test.runner.lifecycle.Stage.RESUMED).first()

@@ -36,7 +36,7 @@ import kotlinx.coroutines.delay
             repeat(case.size) { Text("${('A'.code + it).toChar()}", Modifier.weight(1f), textAlign = TextAlign.Center, color = Color(0xFFE4B86B)) }
         }
         repeat(case.size) { row ->
-            if (case.scene != null && row == case.size - 1) Text("EXTERIOR", color = Color(0xFF88D8CB), style = MaterialTheme.typography.labelSmall)
+            if (case.scene != null && case.scene?.enforceConnections != true && row == case.size - 1) Text("EXTERIOR", color = Color(0xFF88D8CB), style = MaterialTheme.typography.labelSmall)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("${row + 1}", Modifier.width(18.dp), color = Color(0xFFE4B86B))
                 Box(Modifier.weight(1f)) {

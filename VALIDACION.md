@@ -25,7 +25,7 @@ Las primeras comprobaciones detectaron un aviso de indentación de Lint y límit
 - APK: `app/build/outputs/apk/debug/app-debug.apk`.
 - Descarga de la sesión: `CrimeGrid-0.4-debug.apk`.
 - Paquete `com.crimegrid`, versionCode 4, versionName 0.4.0, Android 8.0 o posterior.
-- SHA-256 del APK: `9de0f7e8faa4a7eb4a96df8ec55d940db73d4a5ccc8f99177b22345af544f034`.
+- SHA-256 del APK: `56836f50b0fe31a0f5bbe430d075c04981e32a8d6d4ec9bc74fc4ecb7881c09e`.
 - Repositorio de destino: https://github.com/alejatorrrr/CrimeGrid .
 - El workflow de GitHub genera `CrimeGrid-debug` y los informes de pruebas al publicarse el proyecto.
 
